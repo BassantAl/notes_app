@@ -18,16 +18,18 @@ class AddNoteButtonSheet extends StatelessWidget {
           if (state is AddNoteFailureState) {
             print('failed ${state.errorMessage}');
           }
-      
+
           if (state is AddNoteSuccessState) {
             Navigator.pop(context);
           }
         },
         builder: (context, state) {
           return AbsorbPointer(
-            absorbing: state is AddNoteLoadingState ?true:false,
+            absorbing: state is AddNoteLoadingState ? true : false,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16) +
+                   EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
               child: SingleChildScrollView(child: AddNoteForm()),
             ),
           );
