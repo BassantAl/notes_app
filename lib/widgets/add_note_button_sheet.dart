@@ -21,7 +21,7 @@ class AddNoteButtonSheet extends StatelessWidget {
           }
 
           if (state is AddNoteSuccessState) {
-            // context.read<NotesCubit>().fetchAllNotes();
+            context.read<NotesCubit>().fetchAllNotes();
             Navigator.pop(context);
           }
         },
